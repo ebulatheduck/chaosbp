@@ -1,7 +1,8 @@
 'use strict';
-import { world, system } from '@minecraft/server';
+import { world, system, TicksPerSecond } from '@minecraft/server';
 import { chaos } from './chaos';
-import * as config from './config';
+
+const chaosInterval = TicksPerSecond * 30;
 
 // Scoreboard setup
 if (!world.scoreboard.getObjective('chaos')) world.scoreboard.addObjective('chaos');
@@ -13,5 +14,5 @@ system.runInterval(() => {
     if (!chaosObjective.getScore('enabled')) return;
     let count = chaosObjective.addScore('count', 1);
     chaosObjective.setScore('count', count % chaosInterval);
-    if (count == config.chaosInterval) chaos();
+    if (count == chaosInterval) chaos();
 });
