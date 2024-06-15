@@ -1,0 +1,8 @@
+{
+  "name": "chaosbp",
+  "version": "1.0.0",
+  "dependencies": {
+    "@minecraft/server": "1.10.0",
+    "@minecraft/server-ui": "1.1.0"
+  }
+}
