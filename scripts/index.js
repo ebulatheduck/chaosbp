@@ -1,8 +1,7 @@
 'use strict';
-import { world, system, TicksPerSecond } from '@minecraft/server';
+import { world, system } from '@minecraft/server';
 import { chaos } from './chaos';
-
-const chaosInterval = TicksPerSecond * 30;
+import { chaosInterval } from './config';
 
 // Scoreboard setup
 if (!world.scoreboard.getObjective('chaos')) world.scoreboard.addObjective('chaos');
