@@ -16,27 +16,27 @@ const chaosFunctions = [
         player.addEffect('nausea', TicksPerSecond * 10, { showParticles: false });
     },
     function (player) {
-        player.addEffect('poison', TicksPerSecond * 10, { showParticles: false })
+        player.addEffect('poison', TicksPerSecond * 10, { showParticles: false });
     },
     function (player) {
-        player.addEffect('hunger', TicksPerSecond * 10, { showParticles: false })
+        player.addEffect('hunger', TicksPerSecond * 10, { showParticles: false });
     },
     function (player) {
         player.addEffect('levitation', TicksPerSecond * 1, { amplifier: 20, showParticles: false });
     },
     function (player) {
-        player.addEffect('blindness', TicksPerSecond * 10, { amplifier: 3, showParticles: false })
+        player.addEffect('blindness', TicksPerSecond * 10, { amplifier: 3, showParticles: false });
     },
     function (player) {
-        player.addEffect('mining_fatigue', TicksPerSecond * 20, { amplifier: 3, showParticles: false })
+        player.addEffect('mining_fatigue', TicksPerSecond * 20, { amplifier: 3, showParticles: false });
     },
     // Spawn blocks
     function (player) {
         if (player.dimension.id == 'nether') return; // Don't help the player
-        player.runCommand('setblock ~~3~ respawn_anchor ["respawn_anchor_charge":4]')
+        player.runCommand('setblock ~~3~ respawn_anchor ["respawn_anchor_charge":4]');
     },
     function (player) {
-        player.runCommand('setblock ~~10~ anvil ["damage":"very_damaged"]')
+        player.runCommand('setblock ~~10~ anvil ["damage":"very_damaged"]');
     },
     // Misc.
     function (player) {
@@ -69,6 +69,5 @@ export function chaos() {
         if (!player.isValid()) return; // Don't run chaos functions on unloaded players
         if (player.getTags().indexOf('nochaos') != -1) return player.runCommand('title @p actionbar \xA7c\xA7l[Chaos]\xA7r You are exempt from chaos functions.');
         chaosFunctions[Math.floor(Math.random() * chaosFunctions.length)](player);
-        // chaosFunctions[13](player);
     });
 }
