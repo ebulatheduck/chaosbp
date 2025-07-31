@@ -3,8 +3,7 @@ name: release
 on:
   workflow_dispatch:
   push:
-    tags:
-    - 'v*'
+    tags: '*'
 
 permissions:
   contents: write
